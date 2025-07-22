@@ -1,10 +1,10 @@
-package gwjang.trainticket.tiket
+package gwjang.trainticket.ticket
 
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RequestMapping("tiket/query")
 @RestController
-class TiketCommandController(
-    private val queryService: TiketDomainQueryService,
+class TicketCommandController(
+    private val queryService: TicketDomainQueryService,
 )
