@@ -6,5 +6,5 @@ import org.springframework.web.bind.annotation.RestController
 @RequestMapping("user/query")
 @RestController
 class UserQueryController(
-    private val queryService: UserDomainQueryService,
+    private val queryService: UserQueryService,
 )
