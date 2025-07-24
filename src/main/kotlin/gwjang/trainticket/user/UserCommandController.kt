@@ -1,5 +1,6 @@
 package gwjang.trainticket.user
 
+import gwjang.trainticket.user.dto.UserCreateRequest
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
@@ -10,7 +11,9 @@ class UserCommandController(
     private val commandService: UserDomainCommandService,
 ) {
     @PostMapping()
-    fun create() {
-        // Implementation for creating a user
+    fun create(request: UserCreateRequest) {
+        commandService.create(
+            request = request,
+        )
     }
 }
