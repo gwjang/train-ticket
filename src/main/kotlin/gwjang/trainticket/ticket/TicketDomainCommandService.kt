@@ -17,7 +17,6 @@ class TicketDomainCommandService(
             Ticket.create(
                 user = user,
                 trainId = request.trainId,
-                seatNumber = request.seatNumber,
             )
         ticketRepository.save(ticket)
     }
