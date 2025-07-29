@@ -1,7 +1,5 @@
 package gwjang.trainticket.ticket
 
-import gwjang.trainticket.user.IUserRepository
-import gwjang.trainticket.user.User
 import org.springframework.stereotype.Service
 import java.util.UUID
 

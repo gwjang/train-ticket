@@ -1,4 +1,4 @@
-package gwjang.trainticket.user
+package gwjang.trainticket.person
 
 import gwjang.trainticket.common.BaseEntity
 import gwjang.trainticket.ticket.Ticket
@@ -9,9 +9,9 @@ import jakarta.persistence.FetchType
 import jakarta.persistence.OneToMany
 
 @Entity
-class User(
+class Person(
     @OneToMany(
-        mappedBy = "user",
+        mappedBy = "person",
         cascade = [CascadeType.ALL],
         orphanRemoval = true,
         fetch = FetchType.LAZY,
@@ -21,6 +21,6 @@ class User(
     var name: String,
 ) : BaseEntity() {
     companion object {
-        fun create(name: String): User = User(name = name)
+        fun create(name: String): Person = Person(name = name)
     }
-}
+} 

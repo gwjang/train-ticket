@@ -1,7 +1,7 @@
 package gwjang.trainticket.ticket
 
+import gwjang.trainticket.person.PersonQueryService
 import gwjang.trainticket.ticket.dto.TicketCreateRequest
-import gwjang.trainticket.user.UserQueryService
 import org.springframework.stereotype.Service
 import java.util.UUID
 
@@ -9,13 +9,13 @@ import java.util.UUID
 class TicketDomainCommandService(
     private val ticketRepository: ITicketRepository,
     private val ticketQueryService: TicketQueryService,
-    private val userQueryService: UserQueryService,
+    private val personQueryService: PersonQueryService,
 ) {
     fun create(request: TicketCreateRequest) {
-        val user = userQueryService.findByIdElseThrow(request.userId)
+        val person = personQueryService.findByIdElseThrow(request.personId)
         val ticket =
             Ticket.create(
-                user = user,
+                person = person,
                 trainId = request.trainId,
             )
         ticketRepository.save(ticket)

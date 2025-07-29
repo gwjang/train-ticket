@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: train-ticket
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+        jdbc:
+          time_zone: Asia/Seoul
+        default_batch_fetch_size: 1000
+        dialect: org.hibernate.spatial.dialect.postgis.PostgisPG95Dialect
+    hibernate:
+      ddl-auto: create
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5433}/train
+    username: ${DB_USERNAME:core}
+    password: ${DB_PASSWORD:rabbit}
+    driverClassName: org.postgresql.Driver
+
+
+server:
+  port: 8086
+

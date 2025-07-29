@@ -1,19 +1,19 @@
-package gwjang.trainticket.user
+package gwjang.trainticket.person
 
-import gwjang.trainticket.user.dto.UserCreateRequest
+import gwjang.trainticket.person.dto.PersonCreateRequest
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
-@RequestMapping("user/command")
+@RequestMapping("person/command")
 @RestController
-class UserCommandController(
-    private val commandService: UserDomainCommandService,
+class PersonCommandController(
+    private val commandService: PersonDomainCommandService,
 ) {
     @PostMapping()
-    fun create(request: UserCreateRequest) {
+    fun create(request: PersonCreateRequest) {
         commandService.create(
             request = request,
         )
     }
-}
+} 

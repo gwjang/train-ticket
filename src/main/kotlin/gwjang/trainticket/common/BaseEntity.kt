@@ -1,8 +1,6 @@
 package gwjang.trainticket.common
 
 import jakarta.persistence.Column
-import jakarta.persistence.GeneratedValue
-import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
 import jakarta.persistence.MappedSuperclass
 import org.springframework.data.annotation.CreatedBy
@@ -26,7 +24,4 @@ open class BaseEntity(
     var modifiedAt: Instant = Instant.now(),
     @LastModifiedBy
     var modifiedById: UUID = UUID(0, 0),
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(columnDefinition = "serial", updatable = false, insertable = false)
-    var serialNumber: Long = 0,
 )

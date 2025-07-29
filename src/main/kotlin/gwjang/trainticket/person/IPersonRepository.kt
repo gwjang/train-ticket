@@ -1,7 +1,7 @@
-package gwjang.trainticket.user
+package gwjang.trainticket.person
 
 import gwjang.trainticket.common.IBaseRepository
 import org.springframework.stereotype.Repository
 
 @Repository
-interface IUserRepository : IBaseRepository<User>
+interface IPersonRepository : IBaseRepository<Person> 

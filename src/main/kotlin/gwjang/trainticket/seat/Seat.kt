@@ -7,11 +7,15 @@ import jakarta.persistence.OneToOne
 
 @Entity
 class Seat(
-    val isAvailable: Boolean = true,
+    var isReserved: Boolean = true,
     @OneToOne
-    var ticket: Ticket,
+    var ticket: Ticket? = null,
 ) : BaseEntity() {
+    fun reserve() {
+        isReserved = true
+    }
+
     companion object {
-        fun create(ticket: Ticket): Seat = Seat(isAvailable = true, ticket = ticket)
+        fun create(isReserved: Boolean): Seat = Seat(isReserved = isReserved)
     }
 }
