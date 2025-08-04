@@ -11,6 +11,7 @@ import java.util.UUID
 @RestController
 class SeatCommandController(
     private val commandService: SeatDomainCommandService,
+    private val seatEventProducer: SeatEventProducer,
 ) {
     @PostMapping("")
     fun create(request: SeatCreateRequest): Seat =
@@ -23,5 +24,12 @@ class SeatCommandController(
         @PathVariable id: UUID,
     ) {
         commandService.reserve(id)
+    }
+
+    @PostMapping("{id}/reserve/publish")
+    fun reserveAndPublish(
+        @PathVariable id: UUID,
+    ) {
+        seatEventProducer.publishReservationEvent(id)
     }
 }

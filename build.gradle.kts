@@ -43,6 +43,7 @@ dependencies {
     testImplementation("io.kotest:kotest-property:5.6.0")
     testImplementation("io.kotest:kotest-framework-datatest:5.6.0")
     testImplementation("io.kotest.extensions:kotest-extensions-spring:1.1.3")
+    implementation("org.springframework.kafka:spring-kafka")
 }
 
 kotlin {
